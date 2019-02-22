@@ -12,38 +12,35 @@ function newGame() {
     $("#number").text(randomNumber);
     gameStarted = true;
 
-//click on each crystal to reveal a random number
+//click on each crystal to reveal a random number and update win and lose counter 
   $(".gem").on("click", function() {
     var crystalNumber = Math.floor(Math.random() * (12 - 1)) + 1;
     playerScore += crystalNumber;
     $("#total-score").text("Your total score is: " + " " + playerScore);
     if(playerScore === randomNumber){
-      winSum()
+      alert("You win, your'e a gem!")
+      winCounter++
+     $("#win-count").text("WINS: " + " " + winCounter)
+     resetGame()
+     
     }
     else if (playerScore > randomNumber){
-      lossSum()
-      newGame()
+      alert("Loser! try again.")
+      lossCounter++
+      $("#loss-count").text("LOSSES: " + " " + lossCounter)
+      resetGame()
    }
   }
   )
+//reset function
+ function resetGame() {
+   playerScore = 0;
+   $("#number").text(randomNumber);
+   var crystalNumber = Math.floor(Math.random() * (12 - 1)) + 1;
 }
-//update win counter 
-function winSum(){
-  alert("You win, youre a gem!")
-  $(".win-count").text("WINS: " + " " + winCounter)
-  winCounter++
-  newGame()
 }
-//update loss counter
-function lossSum(){
-  alert("Loser! try again.")
-  lossCounter++
-  $(".loss-count").text("LOSSES: " + " " + lossCounter)
-  newGame()
-}
-
-newGame() 
-
+ newGame()
+ 
 }
  
 
