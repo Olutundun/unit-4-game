@@ -7,8 +7,8 @@ You win the game by matching your total score to random number. The value of eac
 - CSS
 - Javascript
 
-Game Instructions:
+## Game Instructions:
 ![crystal collector](assets/images/c1.JPG)
 
-Random Number and Player's score:
+## Random Number and Player's score:
 ![crystal collector](assets/images/c2.JPG)
